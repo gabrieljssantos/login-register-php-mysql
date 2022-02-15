@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway';
+    font-family: 'Arial';
     text-decoration: none;
 }
 
 body{
-    background-image: url(../image/bg5.jpg);
+    background-image: url(../image/Moppe2015.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -29,14 +29,14 @@ body{
     width: 100%;
     height: 80px;
     padding: 10px;
-    background: #282638;
+    background: #243258;
     display: flex;
     position: relative;
 }
 
 .logo-title{
-    display: flex;
-    margin-top: 8px;
+    display: absolute;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -118,7 +118,7 @@ a{
 }
 
 .border-input{
-    border-bottom: 1px solid #5584FF;
+    border-bottom: 1px solid #f48221;
 }
 
 .line-input input{
@@ -134,7 +134,7 @@ a{
     font-size: 20px;
     position: relative;
     top: -4px;
-    color: #0076ff;
+    color: #f48221;
 }
 
 .form button{
@@ -144,7 +144,7 @@ a{
     margin: auto;
     margin-top: 50px;
     color: white;
-    background: #5584FF;
+    background: #f48221;
     border-style: none;
     outline: 0px;
     border-radius: 50px;
@@ -177,7 +177,7 @@ a{
 
 
 .active{
-    border-bottom: 4px solid #5584FF;
+    border-bottom: 4px solid #f48221;
 }
 
 
@@ -212,36 +212,3 @@ a{
             color: black;
             background: white;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

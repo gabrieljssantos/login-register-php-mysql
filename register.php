@@ -20,7 +20,7 @@
         
         if (empty($correo) or empty($usuario) or empty($clave) or empty($clave2)){
             
-            $error .= '<i>Favor de rellenar todos los campos</i>';
+            $error .= '<i>Por favor, preencha <b>todos</b> os campos</i>';
         }else{
             try{
                 $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '');
@@ -34,11 +34,11 @@
             
                         
             if ($resultado != false){
-                $error .= '<i>Este usuario ya existe</i>';
+                $error .= '<i>Este usuario <b>já</b> existe!</i>';
             }
             
             if ($clave != $clave2){
-                $error .= '<i> Las contraseñas no coinciden</i>';
+                $error .= '<i>As senhas <b>não</b> correspondem!</i>';
             }
             
             
@@ -54,7 +54,7 @@
                 
             ));
             
-            $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
+            $error .= '<i style="color: green;">Usuario registrado com <b>sucesso</b>!</i>';
         }
     }
 
