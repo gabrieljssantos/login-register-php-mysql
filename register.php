@@ -8,24 +8,24 @@
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
-        $correo = $_POST['correo'];
+        $email = $_POST['email'];
         $usuario = $_POST['usuario'];
-        $clave = $_POST['clave'];
-        $clave2 = $_POST['clave2'];
+        $senha = $_POST['senha'];
+        $senha2 = $_POST['senha2'];
         
-        $clave = hash('sha512', $clave);
-        $clave2 = hash('sha512', $clave2);
+        $senha = hash('sha512', $senha);
+        $senha2 = hash('sha512', $senha2);
         
         $error = '';
         
-        if (empty($correo) or empty($usuario) or empty($clave) or empty($clave2)){
+        if (empty($email) or empty($usuario) or empty($senha) or empty($senha2)){
             
             $error .= '<i>Por favor, preencha <b>todos</b> os campos</i>';
         }else{
             try{
-                $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '');
-            }catch(PDOException $prueba_error){
-                echo "Error: " . $prueba_error->getMessage();
+                $conexion = new PDO('mysql:host=localhost;dbname=feedback-project', 'root', '');
+            }catch(PDOException $error_message){
+                echo "Error: " . $error_message->getMessage();
             }
             
             $statement = $conexion->prepare('SELECT * FROM login WHERE usuario = :usuario LIMIT 1');
@@ -37,7 +37,7 @@
                 $error .= '<i>Este usuario <b>já</b> existe!</i>';
             }
             
-            if ($clave != $clave2){
+            if ($senha != $senha2){
                 $error .= '<i>As senhas <b>não</b> correspondem!</i>';
             }
             
@@ -45,12 +45,12 @@
         }
         
         if ($error == ''){
-            $statement = $conexion->prepare('INSERT INTO login (id, correo, usuario, clave) VALUES (null, :correo, :usuario, :clave)');
+            $statement = $conexion->prepare('INSERT INTO login (id, email, usuario, senha) VALUES (null, :email, :usuario, :senha)');
             $statement->execute(array(
                 
-                ':correo' => $correo,
+                ':email' => $email,
                 ':usuario' => $usuario,
-                ':clave' => $clave
+                ':senha' => $senha
                 
             ));
             
@@ -59,6 +59,6 @@
     }
 
 
-    require 'frontend/register-vista.php';
+    require 'views/register-page.php';
 
 ?>

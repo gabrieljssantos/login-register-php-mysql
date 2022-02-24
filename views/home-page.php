@@ -9,9 +9,10 @@
 <body>
    
    <div class="welcome">
-        <h1>Seja Bem Vindo,</h1>
-        <a href="cerrar.php">Sair!</a>
+        <h1>Seja Bem Vindo</h1>
+        <a href="close-connection.php">Sair!</a>
    </div>
+   
    
 </body>
 </html>

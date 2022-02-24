@@ -9,35 +9,33 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         $usuario = $_POST['usuario'];
-        $clave = $_POST['clave'];
-        $clave = hash('sha512', $clave);
+        $senha = $_POST['senha'];
+        $senha = hash('sha512', $senha);
         
         try{
-            $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '');
-            }catch(PDOException $prueba_error){
-                echo "Error: " . $prueba_error->getMessage();
+            $conexion = new PDO('mysql:host=localhost;dbname=feedback-project', 'root', '');
+            }catch(PDOException $error_message){
+                echo "Error: " . $error_message->getMessage();
             }
         
         $statement = $conexion->prepare('
-        SELECT * FROM login WHERE usuario = :usuario AND clave = :clave'
+        SELECT * FROM login WHERE usuario = :usuario AND senha = :senha'
         );
         
         $statement->execute(array(
             ':usuario' => $usuario,
-            ':clave' => $clave
+            ':senha' => $senha
         ));
             
         $resultado = $statement->fetch();
         
         if ($resultado !== false){
             $_SESSION['usuario'] = $usuario;
-            header('location: principal.php');
+            header('location: home.php');
         }else{
             $error .= '<i>Este Usuario NÃO existe!</i>';
         }
-    }
-    
-require 'frontend/login-vista.php';
-
+    }   
+require 'views/login-page.php';
 
 ?>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login/Cadastro</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="icon/style.css">
     <link rel="stylesheet" href="css/global.css">
@@ -22,14 +22,15 @@
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bem-vindo</h1><h2></h2></div>
+            <div class="welcome-form"><h1>Olá, Seja Bem-vindo!</h1></div>
+        
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
                 <input type="text" placeholder="Usuário" name="usuario">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Senha" name="clave">
+                <input type="password" placeholder="Senha" name="senha">
             </div>
             
              <?php if(!empty($error)): ?>

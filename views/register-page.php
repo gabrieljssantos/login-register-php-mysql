@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Register Magtimus</title>
+    <title>Cadastro</title>
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     
@@ -16,7 +16,7 @@
 <div class="container-form">
         <div class="header">
             <div class="logo-title">
-                <img src="" alt="">
+            <img src="./image/logoM.png" alt="">
                 <h2></h2>
             </div>
             <div class="menu">
@@ -26,11 +26,11 @@
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bem-vindo</h1><h2></h2></div>
+            <div class="welcome-form"><h1>Cadastre-se</h1><h2></h2></div>
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>
-                <input type="text" placeholder="Email" name="correo">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
@@ -38,12 +38,23 @@
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Senha" name="clave">
+                <input type="password" placeholder="Senha" name="senha">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Confirmar senha" name="clave2">
+                <input type="password" placeholder="Confirmar senha" name="senha2">
+            </div>           
+            <div class="sectors line-input">
+                <label for="sectors" class="sectorsClass">Setor</label>
+                <select id="sectors" name="sectors">
+                    <option value="ti">TI</option>
+                    <option value="financeiro">Financeiro</option>
+                    <option value="infraestrutura">Infraestrutura</option>
+                    <option value="limpeza">Limpeza</option>
+                </select>
             </div>
+            
+            
             
             <?php if(!empty($error)): ?>
             <div class="mensaje">
